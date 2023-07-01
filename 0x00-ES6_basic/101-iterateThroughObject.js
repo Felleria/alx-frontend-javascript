@@ -1,5 +1,10 @@
 export default function iterateThroughObject(reportWithIterator) {
-  if (!reportWithIterator) {
-    console.log('Placeholder');
+  let n = reportWithIterator.next();
+  let res = '';
+
+  while (!n.done) {
+    res += `${n.value} | `;
+    n = reportWithIterator.next();
   }
+  return res.slice(0, res.length - 3);
 }
